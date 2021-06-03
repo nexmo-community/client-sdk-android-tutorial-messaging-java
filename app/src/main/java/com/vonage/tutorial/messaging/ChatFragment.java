@@ -139,7 +139,7 @@ public class ChatFragment extends Fragment implements BackPressHandler {
     }
 
     private String getConversationLine(NexmoMemberEvent memberEvent) {
-        String user = memberEvent.getMember().getUser().getName();
+        String user = memberEvent.getEmbeddedInfo().getUser().getName();
 
         switch (memberEvent.getState()) {
             case JOINED:
@@ -156,7 +156,7 @@ public class ChatFragment extends Fragment implements BackPressHandler {
     }
 
     private String getConversationLine(NexmoTextEvent textEvent) {
-        String user = textEvent.getFromMember().getUser().getName();
+        String user = textEvent.getEmbeddedInfo().getUser().getName();
         return user + "  said: " + textEvent.getText();
     }
 
