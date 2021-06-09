@@ -13,12 +13,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        new NexmoClient.Builder().build(this);
+
         setContentView(R.layout.activity_main);
 
         NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavManager.getInstance().init(navController);
-
-        new NexmoClient.Builder().build(this);
     }
 
     @Override
