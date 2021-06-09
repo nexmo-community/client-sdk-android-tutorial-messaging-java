@@ -1,5 +1,7 @@
 package com.vonage.tutorial.messaging;
 
+import android.os.Handler;
+import android.os.Looper;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 
@@ -21,6 +23,11 @@ public final class NavManager {
     }
 
     public void navigate(NavDirections navDirections) {
-        navController.navigate(navDirections);
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                navController.navigate(navDirections);
+            }
+        });
     }
 }
