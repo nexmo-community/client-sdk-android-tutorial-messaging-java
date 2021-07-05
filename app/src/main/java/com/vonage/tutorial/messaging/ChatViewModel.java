@@ -24,7 +24,7 @@ public class ChatViewModel extends ViewModel {
     LiveData<String> userName = _userName;
 
     private MutableLiveData<ArrayList<NexmoEvent>> _conversationEvents = new MutableLiveData<>();
-    ;
+    
     LiveData<ArrayList<NexmoEvent>> conversationEvents = _conversationEvents;
 
     private NexmoMessageEventListener messageListener = new NexmoMessageEventListener() {
